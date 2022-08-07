@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Class Timetable</title>
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <style>
+        span {
+            color: #f9004d;
+        }
+
+        body {
+            background-image: url(tab4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .table-content {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9cm;
+            min-width: 600px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .table-content thead tr {
+            text-align: center;
+
+            color: brown;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .table-content th,
+        td {
+            text-align: center;
+
+            padding: 12px 15px;
+        }
+
+        .table-content th {
+            text-align: center;
+
+            color: black;
+        }
+
+        .table-content td {
+            color: black;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .table-content tbody tr {
+            border-bottom: 1px solid #f9004d;
+        }
+
+        .table-content tbody tr:nth-of-type(even) {
+            background-color: antiquewhite;
+        }
+
+        .table-content tbody tr:last-of-type {
+            border-bottom: px solid #d78417;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1 style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;"><span> <u> CLASS
+                TIMETABLE</u></span>
+    </h1>
+
+    <section>
+        <table class="table-content">
+            <tr>
+                <th>DAY</th>
+                <th>Morning Period 1</th>
+                <th>Morning Period 2</th>
+                <th>Morning Period 3</th>
+                <th>Afternoon Period 1</th>
+                <th>Afternoon Period 2</th>
+                <th>Afternoon Period 3</th>
+            </tr>
+
+            <tr id="day1">
+                <td>MONDAY</td>
+                <td id="s11"></td>
+                <td id="s12"></td>
+                <td id="s13"></td>
+                <td id="s14"></td>
+                <td id="s15"></td>
+                <td id="s16"></td>
+            </tr>
+
+            <tr id="day2">
+                <td>TUESDAY</td>
+                <td id="s21"></td>
+                <td id="s22"></td>
+                <td id="s23"></td>
+                <td id="s24"></td>
+                <td id="s25"></td>
+                <td id="s26"></td>
+            </tr>
+            
+            <tr id="day3">
+            <td>WEDNESDAY</td>
+            <td id="s31"></td>
+            <td id="s32"></td>
+            <td id="s33"></td>
+            <td id="s34"></td>
+            <td id="s35"></td>
+            <td id="s36"></td>
+            </tr>
+
+            <tr id="day4">
+                <td>THURSDAY</td>
+                <td id="s41"></td>
+                <td id="s42"></td>
+                <td id="s43"></td>
+                <td id="s44"></td>
+                <td id="s45"></td>
+                <td id="s46"></td>
+            </tr>
+
+            <tr id="day5">
+                <td>FRIDAY</td>
+                <td id="s51"></td>
+                <td id="s52"></td>
+                <td id="s53"></td>
+                <td id="s54"></td>
+                <td id="s55"></td>
+                <td id="s56"></td>
+            </tr>
+
+
+            <tr id="day6">
+                <td>SATURDAY</td>
+                <td id="s61"></td>
+                <td id="s62"></td>
+                <td id="s63"></td>
+                <td id="s64"></td>
+                <td id="s65"></td>
+                <td id="s66"></td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+
+        var array = [];
+
+        for (let i = 1; i <= 18; i++) {
+            var course = prompt("Enter subject " + i);
+            array.push(course);
+        }
+
+        for (let i = 1; i < 7; i++) {
+            var day = document.getElementById("day" + i)
+            for (let j = 1; j < 7; j++) {
+                var subject = document.getElementById("s" + i + j);//s11,s12,s13 and so on...
+                subject.textContent = array[((i - 1) * 6 + (j - 1)) % 18];
+            }
+        }
+
+    </script>
+
+
+    <!-- <script src="q2.js"></script> -->
+
+</body>
+
+</html>
